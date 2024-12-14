@@ -1,2 +1,11 @@
-**/output/**
-**.uvguix.**
+## exclude listing, logs and deps
+Listings/
+## exclude object files and executable
+Objects/
+
+## a user define gui configuration 
+*.uvguix.*
+
+
+## event record during  debug
+*.scvd
