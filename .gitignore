@@ -9,3 +9,5 @@ Objects/
 
 ## event record during  debug
 *.scvd
+
+**/output/**
