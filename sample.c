@@ -23,9 +23,9 @@ volatile state_t state;
 extern void ASM_func(uint32_t VETT[], uint32_t n);
 
 // Local Global Variables
-uint32_t VETT[N];
-uint32_t i;
-uint32_t VAR;
+volatile uint32_t VETT[N];
+volatile uint32_t i;
+volatile uint32_t VAR;
 
 int main (void) {
 	// Imperative Inits
