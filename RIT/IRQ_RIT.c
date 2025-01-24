@@ -28,7 +28,7 @@ void RIT_IRQHandler(void){
 	if(joystick_check_dir(JOYSTICK_UP)){
 		pressed_joystick_up++;
 		if(pressed_joystick_up == 1) {
-			joystick_flag |= FLAG_JOYSTICK_UP;
+			//joystick_flag |= FLAG_JOYSTICK_UP;
 		}
 	}
 	else pressed_joystick_up = 0;
@@ -40,7 +40,7 @@ void RIT_IRQHandler(void){
 	if(joystick_check_dir(JOYSTICK_DOWN)){
 		pressed_joystick_down++;
 		if(pressed_joystick_down == 1) {
-			joystick_flag |= FLAG_JOYSTICK_DOWN;
+			//joystick_flag |= FLAG_JOYSTICK_DOWN;
 		}
 	}
 	else pressed_joystick_down = 0;
@@ -52,7 +52,7 @@ void RIT_IRQHandler(void){
 	if(joystick_check_dir(JOYSTICK_LEFT)){
 		pressed_joystick_left++;
 		if(pressed_joystick_left == 1) {
-			joystick_flag |= FLAG_JOYSTICK_LEFT;
+			//joystick_flag |= FLAG_JOYSTICK_LEFT;
 		}
 	}
 	else pressed_joystick_left = 0;
@@ -64,7 +64,7 @@ void RIT_IRQHandler(void){
 	if(joystick_check_dir(JOYSTICK_RIGHT)){
 		pressed_joystick_right++;
 		if(pressed_joystick_right == 1) {
-			joystick_flag |= FLAG_JOYSTICK_RIGHT;
+			//joystick_flag |= FLAG_JOYSTICK_RIGHT;
 		}
 	}
 	else pressed_joystick_right = 0;
@@ -76,7 +76,7 @@ void RIT_IRQHandler(void){
 	if(joystick_check_dir(JOYSTICK_PRESS)){
 		pressed_joystick_select++;
 		if(pressed_joystick_select == 1) {
-			joystick_flag |= FLAG_JOYSTICK_SELECT;
+			//joystick_flag |= FLAG_JOYSTICK_SELECT;
 		}
 	}
 	else pressed_joystick_select = 0;
