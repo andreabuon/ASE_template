@@ -87,7 +87,8 @@ void RIT_IRQHandler(void){
 	
 	if(pressed_button_0 != 0){
 		if(LPC_GPIO2->FIOPIN & (1 << 10)){ // Button released
-			btn_flag |= FLAG_BUTTON_0;
+			//btn_flag |= FLAG_BUTTON_0;
+			
 			
 			// check here for a longer press
 			
@@ -105,7 +106,7 @@ void RIT_IRQHandler(void){
 	
 	if(pressed_button_1 != 0){
 			if(LPC_GPIO2->FIOPIN & (1 << 11)){ // Button released
-				btn_flag |= FLAG_BUTTON_1;
+				//btn_flag |= FLAG_BUTTON_1;
 				
 				pressed_button_1 = 0;
 				NVIC_EnableIRQ(EINT1_IRQn);
@@ -121,7 +122,7 @@ void RIT_IRQHandler(void){
 	
 	if(pressed_button_2 != 0){
 			if(LPC_GPIO2->FIOPIN & (1 << 12)){ // Button released
-				btn_flag |= FLAG_BUTTON_2;
+				//btn_flag |= FLAG_BUTTON_2;
 				
 				pressed_button_2 = 0;
 				NVIC_EnableIRQ(EINT2_IRQn);
