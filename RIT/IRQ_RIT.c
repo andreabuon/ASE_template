@@ -86,8 +86,7 @@ void RIT_IRQHandler(void){
 	// -------------------------------
 	
 	if(pressed_button_0 != 0){
-		pressed_button_0++;
-		if(LPC_GPIO2->FIOPIN & (1 << 10)){
+		if(LPC_GPIO2->FIOPIN & (1 << 10)){ // Button released
 			btn_flag |= FLAG_BUTTON_0;
 			
 			// check here for a longer press
@@ -95,6 +94,8 @@ void RIT_IRQHandler(void){
 			pressed_button_0 = 0;
 			NVIC_EnableIRQ(EINT0_IRQn);
 			LPC_PINCON->PINSEL4 |= (1 << 20);
+		}else{	// Button still pressed
+			pressed_button_0++;
 		}
 	}
 	
@@ -103,14 +104,15 @@ void RIT_IRQHandler(void){
 	// -------------------------------
 	
 	if(pressed_button_1 != 0){
-			pressed_button_1++;
-			if(LPC_GPIO2->FIOPIN & (1 << 11)){
+			if(LPC_GPIO2->FIOPIN & (1 << 11)){ // Button released
 				btn_flag |= FLAG_BUTTON_1;
 				
 				pressed_button_1 = 0;
 				NVIC_EnableIRQ(EINT1_IRQn);
 				LPC_PINCON->PINSEL4 |= (1 << 22);
-			}
+			}else{	// Button still pressed
+			pressed_button_1++;
+		}
 	}
 
 	// -------------------------------
@@ -118,14 +120,15 @@ void RIT_IRQHandler(void){
 	// -------------------------------
 	
 	if(pressed_button_2 != 0){
-			pressed_button_2++;
-			if(LPC_GPIO2->FIOPIN & (1 << 12)){
+			if(LPC_GPIO2->FIOPIN & (1 << 12)){ // Button released
 				btn_flag |= FLAG_BUTTON_2;
 				
 				pressed_button_2 = 0;
 				NVIC_EnableIRQ(EINT2_IRQn);
 				LPC_PINCON->PINSEL4 |= (1 << 24);
-			}
+			}else{	// Button still pressed
+			pressed_button_2++;
+		}
 	}
 	
 	// -------------------------------
