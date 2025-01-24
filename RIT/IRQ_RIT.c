@@ -89,6 +89,9 @@ void RIT_IRQHandler(void){
 		if(LPC_GPIO2->FIOPIN & (1 << 10)){ // Button released
 			//btn_flag |= FLAG_BUTTON_0;
 			
+			if(pressed_button_0 == 2){ // Flag set to 1 by the botton, +1 at every RIT interrupt
+				//do something
+			}
 			
 			// check here for a longer press
 			
@@ -108,6 +111,10 @@ void RIT_IRQHandler(void){
 			if(LPC_GPIO2->FIOPIN & (1 << 11)){ // Button released
 				//btn_flag |= FLAG_BUTTON_1;
 				
+				if(pressed_button_1 == 2){ // Flag set to 1 by the botton, +1 at every RIT interrupt
+					//do something
+				}
+				
 				pressed_button_1 = 0;
 				NVIC_EnableIRQ(EINT1_IRQn);
 				LPC_PINCON->PINSEL4 |= (1 << 22);
@@ -123,6 +130,10 @@ void RIT_IRQHandler(void){
 	if(pressed_button_2 != 0){
 			if(LPC_GPIO2->FIOPIN & (1 << 12)){ // Button released
 				//btn_flag |= FLAG_BUTTON_2;
+				
+				if(pressed_button_2 == 2){ // Flag set to 1 by the botton, +1 at every RIT interrupt
+					//do something
+				}
 				
 				pressed_button_2 = 0;
 				NVIC_EnableIRQ(EINT2_IRQn);
