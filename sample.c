@@ -34,7 +34,7 @@ int main (void) {
 	
 	// Initialize Variables
 	state = STATE_IDLE;
-	memset(VETT, 0, sizeof(VETT));
+	memset((void*) VETT, 0, sizeof(VETT));
 	i = 0;
 	VAR = 0;
 	
